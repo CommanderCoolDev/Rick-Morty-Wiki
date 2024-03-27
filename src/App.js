@@ -5,7 +5,9 @@ import 'bootstrap/dist/js/bootstrap'
 function App () {
   return (
     <div className='App'>
-      <h1 className='text-center'>Rick and Morty Mighty WIKI</h1>
+      <h1 className='text-center ubuntu my-4'>
+        Rick and Morty <span className='text-primary'>Mighty WIKI</span>
+      </h1>
     </div>
   )
 }
