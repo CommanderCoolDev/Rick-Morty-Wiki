@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Cards = () => {
-  return <div>Cards</div>
+  return <div classNAme='col-4'>Cards</div>
 }
 //rafce
 export default Cards
