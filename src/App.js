@@ -8,18 +8,27 @@ import Cards from './components/Cards/Cards'
 function App() {
   let [pageNumber, setPageNumber] = useState(1)
   let [data, setData] = useState([])
+  let { info, results } = data
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`
-  console.log(data)
+  console.log(results)
+  console.log(info)
   //TODO: move to separate file
-  let fetchData = async () => {
-    let data = await fetch(api)
-      .then(res => res.json())
-      .catch(err => console.log('error:', err))
-    setData(data)
-  }
+  // let fetchData = async () => {
+  //   let data = await fetch(api)
+  //     .then(res => res.json())
+  //     .catch(err => console.log('error:', err))
+  //   setData(data)
+  // }
 
   useEffect(() => {
-    fetchData()
+    // fetchData()
+    //IIFE
+    ;(async function () {
+      let data = await fetch(api)
+        .then(res => res.json())
+        .catch(err => console.log(err))
+      setData(data)
+    })()
   }, [api])
   return (
     <div className='App'>
