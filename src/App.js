@@ -10,8 +10,8 @@ function App() {
   let [data, setData] = useState([])
   let { info, results } = data
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`
-  console.log(results)
-  console.log(info)
+  // console.log(results)
+  // console.log(info)
   //TODO: move to separate file
   // let fetchData = async () => {
   //   let data = await fetch(api)
@@ -42,7 +42,7 @@ function App() {
           </div>
           <div className='col-8'>
             <div className='row'>
-              <Cards />
+              <Cards results={results} />
             </div>
           </div>
           <div className='col-3'></div>
