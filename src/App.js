@@ -3,10 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap'
 import Filters from './components/Filters/Filters'
 import Cards from './components/Cards/Cards'
+import Pagination from './components/Pagination/Pagination'
 // import './App.css'
 
 function App() {
   let [pageNumber, setPageNumber] = useState(1)
+  console.log(pageNumber)
   let [data, setData] = useState([])
   let { info, results } = data
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`
@@ -48,6 +50,7 @@ function App() {
           <div className='col-3'></div>
         </div>
       </div>
+      <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber} />
     </div>
   )
 }

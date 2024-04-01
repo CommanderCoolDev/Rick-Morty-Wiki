@@ -7,6 +7,7 @@ const Cards = ({ results }) => {
   if (results) {
     display = results.map(el => {
       let { id, name, gender, image, status, location } = el
+      // console.log(el)
       return (
         <div key={id} className='col-4 mb-4 position-relative'>
           <div className={s.cards}>
@@ -52,5 +53,12 @@ const Cards = ({ results }) => {
   }
   return <>{display}</>
 }
+
+
+
+
+
+
+
 //rafce
 export default Cards
