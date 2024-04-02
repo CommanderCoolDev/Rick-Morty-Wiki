@@ -14,7 +14,7 @@ function App() {
   let { info, results } = data
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`
   // console.log(results)
-  // console.log(info)
+  // console.log(info?.pages)
   //TODO: move to separate file
   // let fetchData = async () => {
   //   let data = await fetch(api)
@@ -52,7 +52,11 @@ function App() {
           <div className='col-3'></div>
         </div>
       </div>
-      <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber} />
+      <Pagination
+        info={info}
+        pageNumber={pageNumber}
+        setPageNumber={setPageNumber}
+      />
     </div>
   )
 }
