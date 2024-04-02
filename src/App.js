@@ -4,14 +4,15 @@ import 'bootstrap/dist/js/bootstrap'
 import Filters from './components/Filters/Filters'
 import Cards from './components/Cards/Cards'
 import Pagination from './components/Pagination/Pagination'
+import Search from './components/Search/Search'
 // import './App.css'
 
 function App() {
   let [pageNumber, setPageNumber] = useState(1)
-  console.log(pageNumber)
   let [data, setData] = useState([])
+  let [search, setSearch] = useState('')
   let { info, results } = data
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`
   // console.log(results)
   // console.log(info)
   //TODO: move to separate file
@@ -37,6 +38,7 @@ function App() {
       <h1 className='text-center ubuntu my-4'>
         Rick and Morty <span className='text-primary'>Mighty WIKI</span>
       </h1>
+      <Search setSearch={setSearch} setPageNumber={setPageNumber} />
       <div className='container'>
         <div className='row'>
           <div className='col-3'>
