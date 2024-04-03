@@ -1,6 +1,20 @@
 import React from 'react'
+import FilterBtn from '../FilterBtn'
 
 const Species = () => {
+  let species = [
+    'Human',
+    'Alien',
+    'Humanoid',
+    'Poopybutthole',
+    'Mythological',
+    'Unknown',
+    'Animal',
+    'Disease',
+    'Robot',
+    'Cronenberg',
+    'Planet',
+  ]
   return (
     <div className='accordion-item'>
       <h2 className='accordion-header'>
@@ -20,7 +34,11 @@ const Species = () => {
         className='accordion-collapse collapse'
         data-bs-parent='#accordionExample'
       >
-        <div className='accordion-body'></div>
+        <div className='accordion-body'>
+          {species.map((item, index) => (
+            <FilterBtn key={index} name='species' index={index} item={item} />
+          ))}
+        </div>
       </div>
     </div>
   )

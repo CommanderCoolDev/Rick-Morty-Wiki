@@ -1,6 +1,8 @@
 import React from 'react'
+import FilterBtn from '../FilterBtn'
 
 const Status = () => {
+  let status = ['Alive', 'Dead', 'Unknown']
   return (
     <div className='accordion-item'>
       <h2 className='accordion-header'>
@@ -21,7 +23,9 @@ const Status = () => {
         data-bs-parent='#accordionExample'
       >
         <div className='accordion-body'>
-      
+          {status.map((item, index) => (
+            <FilterBtn key={index} name='status' index={index} item={item} />
+          ))}
         </div>
       </div>
     </div>

@@ -1,20 +1,29 @@
 import React from 'react'
 
-const FilterBtn = () => {
+const FilterBtn = ({ name, index, item }) => {
   return (
-    <>
+    <div>
+      <style jsx>{`
+        .x:checked + label {
+          background: #0b5ed7;
+          color: #fff;
+        }
+        input[type='radio'] {
+          display: none;
+        }
+      `}</style>
       <div className='form-check'>
         <input
-          className='form-check-input'
+          className='form-check-input x'
           type='radio'
-          name='flexRadioDefault'
-          id='flexRadioDefault1'
+          name={name}
+          id={`${name}-${index}`}
         />
-        <label className='form-check-label' for='flexRadioDefault1'>
-          Default radio
+        <label className='btn btn-outline-primary' for={`${name}-${index}`}>
+          {item}
         </label>
       </div>
-      <div className='form-check'>
+      {/* <div className='form-check'>
         <input
           className='form-check-input'
           type='radio'
@@ -22,11 +31,11 @@ const FilterBtn = () => {
           id='flexRadioDefault2'
           checked
         />
-        <label className='form-check-label' for='flexRadioDefault2'>
+        <label className='btn btn-outline-primary' for='flexRadioDefault2'>
           Default checked radio
         </label>
-      </div>
-    </>
+      </div> */}
+    </div>
   )
 }
 

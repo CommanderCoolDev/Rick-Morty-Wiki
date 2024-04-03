@@ -1,6 +1,8 @@
 import React from 'react'
+import FilterBtn from '../FilterBtn'
 
 const Gender = () => {
+  let genders = ['female', 'male', 'genderless', 'unknown']
   return (
     <div className='accordion-item'>
       <h2 className='accordion-header'>
@@ -21,7 +23,9 @@ const Gender = () => {
         data-bs-parent='#accordionExample'
       >
         <div className='accordion-body'>
-          
+          {genders.map((item, index) => (
+            <FilterBtn key={index} name='gender' index={index} item={item} />
+          ))}
         </div>
       </div>
     </div>
