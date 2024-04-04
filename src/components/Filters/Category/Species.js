@@ -34,7 +34,7 @@ const Species = () => {
         className='accordion-collapse collapse'
         data-bs-parent='#accordionExample'
       >
-        <div className='accordion-body'>
+        <div className='accordion-body d-flex flex-wrap gap-3'>
           {species.map((item, index) => (
             <FilterBtn key={index} name='species' index={index} item={item} />
           ))}

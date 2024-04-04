@@ -22,7 +22,7 @@ const Gender = () => {
         className='accordion-collapse collapse show'
         data-bs-parent='#accordionExample'
       >
-        <div className='accordion-body'>
+        <div className='accordion-body d-flex flex-wrap gap-3'>
           {genders.map((item, index) => (
             <FilterBtn key={index} name='gender' index={index} item={item} />
           ))}

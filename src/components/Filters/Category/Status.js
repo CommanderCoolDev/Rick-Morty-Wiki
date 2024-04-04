@@ -22,7 +22,7 @@ const Status = () => {
         className='accordion-collapse collapse'
         data-bs-parent='#accordionExample'
       >
-        <div className='accordion-body'>
+        <div className='accordion-body d-flex flex-wrap gap-3'>
           {status.map((item, index) => (
             <FilterBtn key={index} name='status' index={index} item={item} />
           ))}
