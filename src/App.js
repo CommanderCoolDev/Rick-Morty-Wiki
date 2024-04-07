@@ -11,8 +11,11 @@ function App() {
   let [pageNumber, setPageNumber] = useState(1)
   let [data, setData] = useState([])
   let [search, setSearch] = useState('')
+  let [status, setStatus] = useState('')
+  let [gender, setGender] = useState('')
+  let [species, setSpecies] =useState('')
   let { info, results } = data
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`
   // console.log(results)
   // console.log(info?.pages)
   //TODO: move to separate file
@@ -41,7 +44,12 @@ function App() {
       <Search setSearch={setSearch} setPageNumber={setPageNumber} />
       <div className='container'>
         <div className='row'>
-          <Filters />
+          <Filters
+            setPageNumber={setPageNumber}
+            setStatus={setStatus}
+            setGender={setGender}
+            setSpecies={setSpecies}
+          />
 
           <div className='col-8'>
             <div className='row'>
