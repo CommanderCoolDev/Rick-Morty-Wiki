@@ -4,10 +4,18 @@ import Species from './Category/Species'
 import Status from './Category/Status'
 
 const Filters = ({ setStatus, setPageNumber,setSpecies, setGender }) => {
+  let handleClear = () => {
+    // setStatus('')
+    // setSpecies('')
+    // setGender('')
+
+    window.location.reload(false)
+  }
   return (
     <div className='col-3'>
       <div className='text-center fw-bold fs-4 mb-2'>Filter</div>
       <div
+        onClick={handleClear}
         style={{ cursor: 'pointer' }}
         className='text-center text-primary text-decoration-underline mb-4'
       >
@@ -15,7 +23,7 @@ const Filters = ({ setStatus, setPageNumber,setSpecies, setGender }) => {
       </div>
       <div className='accordion' id='accordionExample'>
         <Status setPageNumber={setPageNumber} setStatus={setStatus} />
-        <Species setSpecies={setSpecies}  setPageNumber={setPageNumber}/>
+        <Species setSpecies={setSpecies} setPageNumber={setPageNumber} />
         <Gender setPageNumber={setPageNumber} setGender={setGender} />
       </div>
     </div>
