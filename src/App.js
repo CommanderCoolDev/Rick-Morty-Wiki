@@ -5,6 +5,7 @@ import Filters from './components/Filters/Filters'
 import Cards from './components/Cards/Cards'
 import Pagination from './components/Pagination/Pagination'
 import Search from './components/Search/Search'
+import Navbar from './components/Navbar/Navbar'
 // import './App.css'
 
 function App() {
@@ -38,9 +39,8 @@ function App() {
   }, [api])
   return (
     <div className='App'>
-      <h1 className='text-center ubuntu my-4'>
-        Rick and Morty <span className='text-primary'>Mighty WIKI</span>
-      </h1>
+      <Navbar />
+
       <Search setSearch={setSearch} setPageNumber={setPageNumber} />
       <div className='container'>
         <div className='row'>
