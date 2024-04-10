@@ -1,14 +1,15 @@
 import React from 'react'
+import { NavLink, Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <nav class='navbar navbar-expand-lg bg-body-tertiary'>
-      <div class='container'>
-        <h1 className='fs-2 ubuntu navbar-brand'>
+    <nav className='navbar navbar-expand-lg bg-body-tertiary'>
+      <div className='container'>
+        <Link to='/' className='fs-2 ubuntu navbar-brand'>
           Rick and Morty <span className='text-primary'>Mighty WIKI</span>
-        </h1>
+        </Link>
         <button
-          class='navbar-toggler'
+          className='navbar-toggler'
           type='button'
           data-bs-toggle='collapse'
           data-bs-target='#navbarNavAltMarkup'
@@ -16,25 +17,22 @@ const Navbar = () => {
           aria-expanded='false'
           aria-label='Toggle navigation'
         >
-          <span class='navbar-toggler-icon'></span>
+          <span className='navbar-toggler-icon'></span>
         </button>
         <div
-          class='collapse navbar-collapse justify-content-end'
+          className='collapse navbar-collapse justify-content-end'
           id='navbarNavAltMarkup'
         >
-          <div class='navbar-nav'>
-            <a class='nav-link active' aria-current='page' href='#'>
+          <div className='navbar-nav fs-5'>
+            <NavLink to='/' className='nav-link '>
               Characters
-            </a>
-            <a class='nav-link' href='#'>
+            </NavLink>
+            <NavLink to='/episodes' className='nav-link'>
               Episodes
-            </a>
-            <a class='nav-link' href='#'>
-              Pricing
-            </a>
-            <a class='nav-link disabled' aria-disabled='true'>
-              Disabled
-            </a>
+            </NavLink>
+            <NavLink to='/location' className='nav-link'>
+              Location
+            </NavLink>
           </div>
         </div>
       </div>
