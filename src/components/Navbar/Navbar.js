@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Navbar = () => {
   return (
@@ -18,6 +19,7 @@ const Navbar = () => {
           aria-label='Toggle navigation'
         >
           <span className='navbar-toggler-icon'></span>
+          <FontAwesomeIcon icon='fa-solid fa-bars open' />
         </button>
         <div
           className='collapse navbar-collapse justify-content-end'
