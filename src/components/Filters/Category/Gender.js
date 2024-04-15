@@ -3,6 +3,7 @@ import FilterBtn from '../FilterBtn'
 
 const Gender = ({ setPageNumber, setGender }) => {
   let genders = ['female', 'male', 'genderless', 'unknown']
+
   return (
     <div className='accordion-item'>
       <h2 className='accordion-header'>
