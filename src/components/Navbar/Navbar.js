@@ -1,10 +1,11 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import '../../App.css';
+
 
 const Navbar = () => {
   return (
-    <nav className='navbar navbar-expand-lg bg-body-tertiary'>
+    <nav className='navbar navbar-expand-lg bg-light navbar-light mb-4'>
       <div className='container'>
         <Link to='/' className='fs-2 ubuntu navbar-brand'>
           Rick and Morty <span className='text-primary'>Mighty WIKI</span>
@@ -18,16 +19,27 @@ const Navbar = () => {
           aria-expanded='false'
           aria-label='Toggle navigation'
         >
-          <span className='navbar-toggler-icon'></span>
-          <i class="fa-solid fa-bars open"></i>
-          {/* <FontAwesomeIcon icon='fa-solid fa-bars open' /> */}
+          <style jsx>
+            {`
+            button[aria-expanded='false'] > .close{
+              display: none;
+            }
+
+            button[aria-expanded='true'] > .open{
+              display: none;
+            }
+            `}
+      </style>
+          <i class="fa-solid fa-bars open fw-bold text-dark"></i>
+          <i class="fa-solid fa-x close fw-bold text-dark"></i>
+
         </button>
         <div
           className='collapse navbar-collapse justify-content-end'
           id='navbarNavAltMarkup'
         >
           <div className='navbar-nav fs-5'>
-            <NavLink to='/' className='nav-link '>
+            <NavLink activeClassName="active" to='/' className='nav-link '>
               Characters
             </NavLink>
             <NavLink to='/episodes' className='nav-link'>
