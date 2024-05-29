@@ -8,7 +8,7 @@ function InputGroup({ total, name, setID }) {
         class='form-select'
         id={name}
       >
-        <option selected>Choose {name}...</option>
+        <option value ='1' selected>Choose {name}...</option>
         {[...Array(total).keys()].map(x => {
           return (
             <option value={x + 1}>
