@@ -1,15 +1,18 @@
 import React from 'react'
 import s from './Cards.module.scss'
+import { Link } from 'react-router-dom'
 
-const Cards = ({ results }) => {
+const Cards = ({ results, page }) => {
   // console.log('cards', results)
   let display
   if (results) {
     display = results.map(el => {
-      let { id, name, gender, image, status, location } = el
-      // console.log(el)
+      let { id, name,  image, status, location } = el
+      
       return (
-        <div key={id} className='col-4 mb-4 position-relative'>
+        <Link style={ 
+          {textDecoration: 'none'}
+        } to={`${page}${id}`} key={id} className='col-4 mb-4 position-relative text-dark'>
           <div className={s.cards}>
             <img src={image} alt='' className={`${s.img} img-fluid`} />
             <div className={`${s.content} content`}>
@@ -45,7 +48,7 @@ const Cards = ({ results }) => {
               )
             }
           })()}
-        </div>
+        </Link>
       )
     })
   } else {
